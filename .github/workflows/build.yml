@@ -11,8 +11,8 @@ env:
   CIBW_SKIP: "*-manylinux_i686"
   # CIBW_SKIP: "cp27-* cp35-* pp*"
   CIBW_BEFORE_BUILD_LINUX: "yum install -y ncurses-devel"
-  CIBW_REPAIR_WHEEL_COMMAND_LINUX: "auditwheel repair --lib-sdir . -w {dest_dir} {wheel}"
-  CIBW_BEFORE_BUILD_MACOS: "brew install automake ncurses"
+  CIBW_REPAIR_WHEEL_COMMAND_LINUX: "auditwheel repair -w {dest_dir} {wheel}"
+  CIBW_BEFORE_BUILD_MACOS: "brew install ncurses"
   CIBW_REPAIR_WHEEL_COMMAND_MACOS: "delocate-listdeps {wheel} && delocate-wheel -w {dest_dir} -v {wheel}"
 
 jobs:
