@@ -84,7 +84,7 @@ class BuildExt(build_ext):
     }
     l_opts = {
         "msvc": [],
-        "unix": ["-lncurses"],
+        "unix": ["-lncurses", "-ltinfo"],
     }
 
     if sys.platform == "darwin":
