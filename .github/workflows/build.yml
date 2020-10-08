@@ -8,6 +8,7 @@ on:
 # Install Linux and MacOS required libraries / tools.
 env:
   CIBW_SKIP: "cp27-* cp35-* pp*"
+  CIBW_BEFORE_BUILD_LINUX: "yum install ncurses-devel"
   CIBW_BEFORE_BUILD_MACOS: "brew install automake"
 
 jobs:
