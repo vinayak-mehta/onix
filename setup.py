@@ -82,9 +82,14 @@ class BuildExt(build_ext):
         "msvc": ["/EHsc"],
         "unix": ["-O3", "-Wall", "-shared", "-fPIC"],
     }
+
+    unix_l_opts = ["-lncurses"]
+    if sys.platform == "linux":
+        unix_l_opts.append("-ltinfo")
+
     l_opts = {
         "msvc": [],
-        "unix": ["-lncurses", "-ltinfo"],
+        "unix": unix_l_opts,
     }
 
     if sys.platform == "darwin":
