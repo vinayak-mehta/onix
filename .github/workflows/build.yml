@@ -27,8 +27,8 @@ jobs:
         if: runner.os == 'Windows'
         shell: cmd
         run: |
-          python -m pip --disable-pip-version-check install cibuildwheel==1.6.1
-          python -m cibuildwheel --output-dir wheelhouse
+          python3 -m pip --disable-pip-version-check install cibuildwheel==1.6.1
+          python3 -m cibuildwheel --output-dir wheelhouse
         env:
           CIBW_BUILD: "*win_amd64"
           DISTUTILS_USE_SDK: 1
@@ -37,8 +37,8 @@ jobs:
       - name: Install cibuildwheel & build wheels (Linux & MacOS)
         if: runner.os != 'Windows'
         run: |
-          python -m pip --disable-pip-version-check install cibuildwheel==1.6.1
-          python -m cibuildwheel --output-dir wheelhouse
+          python3 -m pip --disable-pip-version-check install cibuildwheel==1.6.1
+          python3 -m cibuildwheel --output-dir wheelhouse
 
       - uses: actions/upload-artifact@v2
         with:
