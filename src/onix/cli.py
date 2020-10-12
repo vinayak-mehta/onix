@@ -4,7 +4,7 @@ import os
 
 import click
 
-import _onix
+from onix import _onix
 from onix.__version__ import __version__
 
 

@@ -25,7 +25,7 @@ dev_requires = dev_requires + requires
 
 ext_modules = [
     Extension(
-        "_onix",
+        "onix._onix",
         # Sort input source files to ensure bit-for-bit reproducible builds
         # (https://github.com/pybind/python_example/pull/53)
         sorted(["src/onix/onix.cpp"]),
